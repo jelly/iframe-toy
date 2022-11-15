@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title></title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+	</body>
+	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+			console.log("snooping");
+			for (i = 0; i < window.frames.parent.length; i++) {
+				const frame = window.frames.parent[i];
+				// Skip ourself
+				if (frame.location.href.endsWith("snoop.html"))
+					continue;
+
+				console.log(frame.secret);
+
+
+			}
+		});
+	</script>
+</html>
